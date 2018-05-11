@@ -2,7 +2,7 @@
   "name": "homewebpage",
   "version": "0.1.0",
   "private": true,
-  "homepage": "ahinchman1.github.io",
+  "homepage": "https://ahinchman1.github.io/website/",
   "dependencies": {
     "gh-pages": "^1.1.0",
     "prop-types": "^15.6.1",

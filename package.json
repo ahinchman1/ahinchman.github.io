@@ -4,10 +4,12 @@
   "private": true,
   "homepage": "https://ahinchman1.github.io/website/",
   "dependencies": {
+    "ajv": "^6.5.0",
     "gh-pages": "^1.1.0",
     "prop-types": "^15.6.1",
     "react": "^16.3.2",
     "react-dom": "^16.3.2",
+    "react-router-dom": "^4.2.2",
     "react-scripts": "1.1.4"
   },
   "scripts": {

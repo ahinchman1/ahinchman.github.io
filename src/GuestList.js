@@ -5,25 +5,25 @@ import Guest from './Guest';
 import PendingGuest from './PendingGuest';
 
 const GuestList = props =>
-	     <ul>
-	     	<PendingGuest name={props.pendingGuest} />
-          	{ props.guests
-	          	.filter(guest => !props.isFiltered || props.isConfirmed)
-	          	.map((guest, index) =>
-	          	<Guest 
-	          	   key={index} 
-	          	   name={guest.name} 
-	          	   isConfirmed={guest.isConfirmed}
-	          	   isEditing={guest.isEditing}
-	          	   handleConfirmation={() => props.toggleConfirmationAt(index)}
-	          	   handleToggleEditing={() => props.toggleEditingAt(index)} 
-	          	   setName={text => props.setNameAt(text, index)}
-	          	   handleGuestRemoval={() => props.removeGuestAt(index)} />
-          	)}
-         </ul>;
+     <ul>
+     	<PendingGuest name={props.pendingGuest} />
+      	{ props.guests
+          	.filter(guest => !props.isFiltered || props.isConfirmed)
+          	.map((guest, index) =>
+          	<Guest 
+          	   key={index} 
+          	   name={guest.name} 
+          	   isConfirmed={guest.isConfirmed}
+          	   isEditing={guest.isEditing}
+          	   handleConfirmation={() => props.toggleConfirmationAt(guest.is)}
+          	   handleToggleEditing={() => props.toggleEditingAt(guest.id)} 
+          	   setName={text => props.setNameAt(text, guest.id)}
+          	   handleGuestRemoval={() => props.removeGuestAt(guest.id)} />
+      	)}
+     </ul>;
 
 
- GuestList.propTypes = {
+GuestList.propTypes = {
  	guests: PropTypes.array.isRequired,
  	toggleConfirmationAt: PropTypes.func.isRequired,
  	toggleEditingAt: PropTypes.func.isRequired,
@@ -31,6 +31,6 @@ const GuestList = props =>
  	isFiltered: PropTypes.bool.isRequired,
  	removeGuestAt: PropTypes.func.isRequired,
  	pendingGuest: PropTypes.string.isRequired
- }
+}
 
 export default GuestList;
